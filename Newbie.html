@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Người mới</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="https://i.pinimg.com/236x/a3/96/2e/a3962ed14ac3c43be31b5df6e5f905ec.jpg">
+    <link rel="stylesheet" href="Newbie.css" >
+</head>
+<body>
+    <div class="start">
+        <div class="logo" style="margin-right: 20px;"><a href=""><img src="https://image.spreadshirtmedia.net/image-server/v1/compositions/T638A2PA1304PT32X35Y36D187145441W17994H3947/views/2,width=550,height=200,appearanceId=2,backgroundColor=000000,noPt=true/anime-logo-sporttasche.jpg" width="120"></a></div>
+
+        <div style="margin: 0 auto;">
+            <div class="down">
+                <button class="downButton" onclick="showNotification()">Thông báo</button>
+                <script>
+                    function showNotification() {
+                        const notification = document.createElement('div');
+                        notification.className = 'notification';
+                        notification.textContent = 'Ko có thông tin gì mới';
+                        document.body.appendChild(notification);
+
+                        setTimeout(() => {
+                            notification.classList.add('show');
+                        }, 100);
+
+                        setTimeout(() => {
+                            notification.classList.remove('show');
+                            setTimeout(() => {
+                                notification.remove();
+                            }, 300);
+                        }, 3000);
+                    }
+                </script>
+            </div>
+            <div class="down">
+                <button class="downButton"><a href="https://myanimelist.net/" target="_blank" style="text-decoration: none; color: aliceblue;">Tin tức</a></button>
+            </div>
+            <div class="down">
+                
+                <button class="downButton">Thể loại</button>
+                    <ul class="down-content">
+                        <li> <a href="#" style="text-decoration: none; color: aliceblue;">Romcom</a></li>
+                        <li><a href="#" style="text-decoration: none; color: aliceblue;">School life</a></li>
+                        <li><a href="#" style="text-decoration: none; color: aliceblue;">Slice of Life</a></li>
+                        <li><a href="#" style="text-decoration: none; color: aliceblue;">Shounen</a></li>
+                        <li><a href="#" style="text-decoration: none; color: aliceblue;">Isekai</a></li>
+                        <li><a href="#" style="text-decoration: none; color: aliceblue;">Mystery</a></li>
+                        <li><a href="#" style="text-decoration: none; color: aliceblue;">Action</a></li>
+                        <li><a href="#" style="text-decoration: none; color: aliceblue;">Harem</a></li>
+                    </ul>
+            </div>
+            <div class="down">
+                <button class="downButton">Hướng dẫn</button>
+                    <ul class="down-content">
+                        <li> <a href="Newbie.html" style="text-decoration: none; color: aliceblue;">Người mới</a></li>
+                        <li><a href="Donate.html" style="text-decoration: none; color: aliceblue;">Ủng hộ</a></li>
+                        <li><a href="Feedback.html" style="text-decoration: none; color: aliceblue;">Góp ý - Báo lỗi</a></li>
+                    </ul>
+            </div>
+            <span><input type="text" class="search" placeholder="Tối thiểu 2 ký tự"></span>
+        </div>
+
+        <div class="login" style="margin-left: auto; text-align: center;">
+            <a href="login.html">Đăng nhập</a>
+        </div>
+    </div>
+
+
+    <div class="slide">
+        <img src="" width="100%" height="450px">
+        <div style="margin: 0;display: flex; align-items: center; justify-content: center; gap: 4px;">
+            <button id="prev" class="button1"></button>
+            <button id="next" class="button2"></button>
+        </div>
+    </div>
+    <script>
+        const slides = [
+            "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/6e8e5494-02de-4297-a5a0-25e0942701b0/d6lwrak-ec59173e-5d85-4a47-a795-2b6ce5c49dfd.png/v1/fill/w_1192,h_670/anime_world_by_manga_ar_d6lwrak-pre.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTA4MCIsInBhdGgiOiJcL2ZcLzZlOGU1NDk0LTAyZGUtNDI5Ny1hNWEwLTI1ZTA5NDI3MDFiMFwvZDZsd3Jhay1lYzU5MTczZS01ZDg1LTRhNDctYTc5NS0yYjZjZTVjNDlkZmQucG5nIiwid2lkdGgiOiI8PTE5MjAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.U4o4G1_7HAM79FgCVeOjprsP2cLTU41RvZd1qOj3Ih4",
+            "https://wallpaperaccess.com/full/2444471.jpg",
+            "https://img.goodfon.com/wallpaper/big/3/1b/ochki-za-graniu-devushka-forma-anime-kuriyama-mirai-kyoukai.webp"
+        ];
+        const slide = document.querySelector('.slide img')
+        s = 0;
+        function showSlide(n){
+            s = (n + slides.length) % slides.length;
+            slide.src = slides[s];
+        }
+        document.getElementById('prev').addEventListener('click', function(){
+            showSlide(s-1)
+            document.getElementById('prev').style.backgroundColor = "#d7d7d7";
+            document.getElementById('next').style.backgroundColor = "#2a2a2a";
+        });
+        document.getElementById('next').addEventListener('click', function(){
+            showSlide(s+1)
+            document.getElementById('prev').style.backgroundColor = "#2a2a2a";
+            document.getElementById('next').style.backgroundColor = "#d7d7d7";
+
+        });
+        showSlide(s);
+    </script>
+
+
+    <div style="display: inline; margin-left: 4%;"><button style="border: none; background-color: #2a2a2a; padding: 15px 12px"><a href="Web.html" style="text-decoration: none;color: aliceblue; font-size: 14px;">Trang chủ<hr style="color: aliceblue;"></a></button></div>
+
+
+    <div class="content">
+        <h1>Hướng Dẫn Người Mới: Làm Quen Với Anime, Manga & Light Novel</h1>
+        <p>Chào mừng bạn đến với thế giới anime, manga và light novel! Nếu bạn là người mới, bài hướng dẫn này sẽ giúp bạn hiểu rõ hơn về các thể loại, cách bắt đầu, một số mẹo,... để có thể tận hưởng một cách trọn vẹn nhất.</p>
+
+        <h2>1. Anime, Manga, Light Novel Là Gì?</h2>
+        <ul>
+            <li><b>Anime:</b> Là phim hoạt hình Nhật Bản, thường được chuyển thể từ manga hoặc light novel, với nhiều thể loại như hành động, lãng mạn, tình cảm học đường, bí ẩn hoặc giả tưởng, chuyển sinh,...</li>
+            <li><b>Manga:</b> Là truyện tranh Nhật Bản, được vẽ theo phong cách độc đáo và thường xuất bản dưới dạng tập truyện.</li>
+            <li><b>Light Novel:</b> Là tiểu thuyết ngắn của Nhật, thường có minh họa phong cách anime/manga, nhắm đến độc giả trẻ.</li>
+        </ul>
+
+        <h2>2. Bắt Đầu Từ Đâu?</h2>
+        <p>Dưới đây là các bước để bạn dễ dàng làm quen:</p>
+        <ul>
+            <li><b>Chọn thể loại phù hợp:</b> Nếu bạn thích lãng mạn, tình cảm học đường, đời thường,... hãy thử các thể loại như "Romcom", "Slice of life", "School life",... Nếu thích hành động, các thể loại "Shounen","Adventure","Action",... là lựa chọn tuyệt vời. Tất nhiên, vẫn còn nhiều thể loại khác nhưng đây là 2 thể loại được cộng đồng quan tâm nhiều nhất.</li>
+            <li><b>Xem trước hay đọc trước:</b> Nên xem Anime trước vì dễ tiếp cận hơn nhờ hình ảnh động và âm thanh. Sau đó, bạn có thể đọc manga hoặc light novel của cùng bộ truyện để khám phá thêm, biết thêm 1 số chi tiết mà anime ko chuyển thể được hết từ tác phẩm gốc (studio cắt đi để vừa với thời lượng 1 tập phim,...).</li>
+            <li><b>Sử dụng nền tảng hợp pháp:</b> Xem anime trên Netflix, Crunchyroll, Muse, Bilibili, hoặc Funimation. Đọc manga/light novel trên BookWalker, Amazon Kindle, hoặc các ứng dụng như Manga Plus,...(Ko khuyến khích vì nhiều hạn chế về ngôn ngữ,...)</li> 
+        </ul>
+
+        <h2>3. Lời Khuyên Cho Người Mới</h2>
+        <ul>
+            <li><b>Đừng ngại thử nhiều thể loại:</b> Từ "Shounen" (hành động, phiêu lưu) đến "Slice of Life" (đời thường), mỗi thể loại chắc chắn đều mang đến những thú vị riêng, nên bạn ko cần quá lo lắng. Khi xem đủ nhiều và lâu thì bạn sẽ nhận ra bạn hứng thú với thể loại nào hơn.
+            Nhưng điều quan trọng là, bạn phải dám thử thì mới biết nó ổn hay ko, mình từng trải qua khoảng thời gian như này và khảo sát từ nhiều người nên khá chắc là nó đúng.</li>
+            <li><b>Bắt đầu với tác phẩm nổi tiếng:</b> Bạn nên tìm các nguồn tổng hợp lại top các bộ anime theo thể loại, sau đó list ra những bộ mà xuất hiện nhiều trong top để tham khảo (Mình ko đưa ra gợi ý ở đây vì quan điểm cá nhân của mỗi người khác nhau). 
+                Mới đầu bạn nên làm như thế vì nếu tự tìm sẽ khá mông lung và tốn time, lúc đó rất dễ nản. Khi bạn xem đủ nhiều bộ ở 1 thể loại (thực ra chỉ cần vài bộ là đủ) thì bạn mới có thể hình dung và đánh giá được 1 bộ anime hay hay ko chỉ cần thông qua vào art và nội dung.</li>
+            <li><b>Tham gia cộng đồng:</b> Thảo luận trên các fanpage, group về anime, manga, light novel để học hỏi và chia sẻ, đôi khi gặp được những người chung quan điểm, triết lí sống từ các nhân vật, thấy được những cái meme,... những thứ ấy như liều muối cho cuộc sống của bạn vậy, thế giới quan của bạn cũng sẽ được mở rộng và thú vị hơn.</li>
+            <li><b>Đọc hoặc xem theo tốc độ của bạn:</b> Không cần vội vàng! Hãy tận hưởng theo cách mà khiến bạn cảm thấy thoải mái, dù gì thì anime, manga hay light novel chủ yếu là để giúp ta giải trí là chính, chỉ cần bạn kiên nhẫn xem hoặc đọc để nhận ra sự thú vị của chúng.</li>
+            <li><b>Đối với light novel (ln):</b> Loại này khá kén người đọc, bởi nó chỉ toàn chữ và thỉnh thoảng mới có illustration (minh họa), nên với 1 số bạn, nó sẽ khá là nhàm chán vì khó tưởng tượng và khô khan. Nhưng, như mình đã nói ở trên, hãy THỬ để trải nghiệm. Đối với những bạn RẤT thích thể loại Action
+                thì mình ko thực sự khuyến khích đọc ln vì cảnh chiến đấu trong ln hơi khó hình dung thật.</li>
+            <li>Nhưng với thể loại Romcom thì khác. Mình thực sự khuyến khích các bạn đọc romcom ln vì có rất nhiều bộ ln romcom, slice of life, school life cực hay và 'ngọt', nhưng nó ko được chuyển thể thành manga hay anime, đổi lại có những illustration rất đẹp. Chưa kể, thể loại này rất dễ liên tưởng, hình dung vì nó liên quan đến đời thường,
+            có những chi tiết rất gần gũi và quen thuộc với ta như ở ngoài đời thực. Dễ hiểu hơn thì, thể loại này giúp ta tưởng tưởng ra 1 thế giới ta luôn muốn mà ngoài đời thực khó có thể có được, và nó logic hơn so với việc tưởng tượng thế giới trong thể loại Action. Khi đọc thể loại này cũng sẽ giúp bạn cảm thấy hạnh phúc và thư giãn vì 
+            nó làm bạn cảm thấy như được thỏa mãn, mãn nguyện. Thực sự mô tả cái này hơi trừu tượng, nhưng đối với 1 số bạn thích thể loại này thì chắc chắn sẽ hiểu được.</li>
+            <li>Còn với những bạn chưa đọc thể loại này nói riêng và phân loại ln nói chung thì các bạn yên tâm 1 điều là, nó ko khô khan, ko dùng ngôn từ hoa mĩ hay quá văn chương,
+            hoặc triết lí, trừu tượng như Ngữ Văn thời THPT hoặc Triết học, Pháp luật đại cương,... thời Đại học, mà nó thú vị hơn nhiều, bạn sẽ phải vừa đọc vừa tưởng tượng, hơi mất time nhưng hãy cố gắng tưởng tượng vì nó sẽ giúp bạn mở rộng được thể giới quan và có thêm nhiều vốn từ, hơn hết, nó sẽ giúp bạn cải thiện khả năng suy nghĩ, giúp bạn
+            suy ngẫm sâu hơn về mọi thứ xung quanh. Quan điểm mỗi người khác nhau, nhưng các bạn vẫn nên trải nghiệm thử nếu có time nhé.</li>
+        </ul>
+
+        <h2>4. Một Số Thuật Ngữ Cơ Bản</h2>
+        <ul>
+            <li><b>Shounen:</b> Truyện/anime dành cho nam thanh thiếu niên, thường tập trung vào hành động và tình bạn.</li>
+            <li><b>Isekai:</b> Thể loại nhân vật được chuyển sinh sang thế giới khác (chung cho cả ra đi ở thế giới thực và còn sống nhưng tự nhiên bị dịch chuyển).</li>
+            <li><b>Slice of Life:</b> Câu chuyện về cuộc sống thường nhật, nhẹ nhàng.</li>
+            <li><b>Otaku:</b> Người đam mê anime/manga/light novel.</li>
+            <li><b>Romcom:</b> Romantic Comedy, thể loại hài hước lãng mạn, thường có bối cảnh ở trường học.</li>
+            <li><b>School life:</b> Thể loại mà bối cảnh của nhân vật xoay quanh trường học, cuộc sống học đường, bạn bè, hội học sinh, hội thao, lễ hội trường,... </li>
+            <li><b>Action:</b> Thể loại hành động nói chung, có sự trao đổi kĩ năng giữa các nhân vật với nhau ở bất kì địa điểm nào (bạn cứ hiểu là cứ có chiến đấu là có Action).</li>
+            <li><b>Harem:</b> Thể loại mà main (nam chính) được nhiều char nữ hứng thú, quan tâm hoặc thường là phải lòng (yêu), bao gồm cả nữ chính (nghe có vẻ hay, sướng đối với người mới nhưng thực ra cũng có this có that, có bộ peak thật nhưng cũng có bộ đáy xh, các bạn mới thì nên đi tham khảo cho chắc, xen bừa cũng khá stress đấy).</li>
+            <li><b>Peak:</b> Bạn sẽ hay gặp cụm từ này ở các fandom, group, bài post, bạn cứ hiểu peak ý là siêu phẩm là được. </li>
+            <li><b>Char:</b> Character, nhân vật.</li>
+            <li><b>Stu:</b> Studio, nhà sản xuất phim.</li>
+            <li><b>Adapted to manga, anime:</b> Được chuyển thể thành manga, anime.</li>
+            <li style="text-align: center;"><h3>---Sẽ update thêm---</h3></li>
+        </ul>
+
+        <p>Cảm ơn mọi người vì đã kiên trì đọc đến những dòng cuối cùng này. Hãy bắt đầu hành trình của bạn ngay bây giờ và khám phá thế giới đầy màu sắc của anime, manga và light novel!<br> 
+             Nếu có thắc mắc, hãy liên hệ qua email <a href="mailto:p.mduc.ptit@gmail.com" class="style">p.mduc.ptit@gmail.com</a> hoặc tham gia cộng đồng của tôi tại <a href="Web.html" class="style" >Đây</a> (trang chủ, mục Khác).</p>
+    </div>
+
+
+    <div class="end">
+        <span style="color: aliceblue;">© Copyright 2025 Igata Kuraitoku. All rights reserved.<br>Liên hệ: <a href="mailto:p.mduc.ptit@gmail.com" class="style"> p.mduc.ptit@gmail.com</a></span>
+        <span style="color: aliceblue;" ><p style="margin-top: 10px;">Theo dõi chúng tôi: <a href="https://www.facebook.com/FanAnimeMangaLightNovel/?locale=vi_VN" style="color:aqua; text-decoration: none;">Facebook</a></p></span> 
+    </div>
+
+</body>
+</html>
