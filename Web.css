@@ -1,0 +1,433 @@
+* {margin: 0; padding: 0;}
+body {
+    background-image: url('https://www.pixelstalk.net/wp-content/uploads/images6/Aesthetic-Anime-Wallpaper-4K-HD.jpg'); 
+    color: #fff;
+    background-attachment: fixed;
+    background-size: cover;
+    font-size: 16px;
+    animation: change 20s infinite; 
+}
+@keyframes change {
+    0% {background-image: url("https://www.pixelstalk.net/wp-content/uploads/images6/Aesthetic-Anime-Wallpaper-4K-HD.jpg");}
+    33% {background-image: url("https://wallpaperaccess.com/full/2830779.jpg");}
+    66% {background-image: url("https://applescoop.org/image/wallpapers/mac/night-mode-anime-style-cottage-on-a-hill-at-dark-night-best-most-popular-free-download-wallpapers-for-macbook-pro-and-macbook-air-and-microsoft-windows-desktop-pcs-4k-07-12-2024-1733638190-hd-wallpaper.webp");}
+    100% {background-image: url("https://www.pixelstalk.net/wp-content/uploads/images6/Aesthetic-Anime-Wallpaper-4K-HD.jpg");}
+}
+
+
+.start {
+    background-color: #2a2a2a;
+    padding: 1px 20px;
+    display: flex;
+    align-items: center;
+}
+.start .search {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    width: 330px;
+    margin-left: 10px;
+    margin-top: 15px;
+}
+
+
+.guide {
+    background-color:#2a2a2a; 
+    border: none;
+    padding: 20px 12px;
+}
+.guide:hover {background-color: gray;} 
+
+
+.down {float: left; overflow: hidden;}
+.down .downButton {
+    font-size: 17px;
+    border: none;
+    color: aliceblue;
+    padding: 18px 14px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+.downButton {cursor: pointer;}
+.down-content {
+    display: none;
+    position: absolute;
+    background-color: #2a2a2a;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.down-content li {
+    float: none;
+    color: aliceblue;
+    padding: 12px 16px;
+    display: block;
+    text-align: left;
+}
+.down-content li:hover {background-color: gray;}
+.down:hover .down-content {display: block;}
+.down:hover .downButton {background-color: gray; color: aliceblue;}
+
+
+.notification {
+    position: absolute;
+    top: 60px;
+    margin-left: 23%;
+    background-color: #333;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+}
+.notification.show {opacity: 1;}
+
+
+.login a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 10px;
+}
+.login a:hover {color: #555; text-decoration: none;}
+
+       
+
+.main-content {display: flex; padding: 20px;}
+.left-content {flex: 3; margin-right: 20px;}  
+.right-content {flex: 1;}
+
+
+.teleport {
+    background-color:#2a2a2a; 
+    border: none;
+    padding: 15px 12px;
+}
+
+
+.ln-section, .anime-section, .love-section {
+    margin-bottom: 20px; 
+    width: 90%; 
+    margin-left: 15px; 
+}
+.ln-section, .anime-section, .love-section {margin-bottom: 30px; border-bottom: 1px solid #555;}
+.ln-section h2, .anime-section h2, .love-section h2, .reference h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: white;
+    background-color: #444;
+    padding: 8px;
+    border-radius: 5px;
+    text-align: center;
+}
+.ln-item, .anime-item, .love-item {
+    display: flex;
+    margin-bottom: 15px;
+    background-color: #2a2a2a;
+    padding: 8px;
+    border-radius: 5px;
+    width: 96%;
+}
+.ln-item img {
+    width: 60px;
+    height: 90px;
+    margin-right: 6px;
+}
+.ln-item h3 {font-size: 12px; margin-bottom: 3px;}
+.ln-item p {font-size: 10px; color: #ccc;}
+.ln-item .add-button {margin-top: 5px;}
+.scroll {
+    max-height: 750px;
+    overflow: auto;
+    display: block;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+    animation: appear 1.2s ease-in;
+}
+.scroll::-webkit-scrollbar {width: 8px;}
+.scroll::-webkit-scrollbar-track {background: #2a2a2a;}
+.scroll::-webkit-scrollbar-thumb {background: #555; border-radius: 4px;}
+
+ 
+.anime-section .anime-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-bottom: 10px;
+}
+.anime-item a {text-decoration: none; color: aliceblue; }
+.anime-item {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #333;
+    padding: 4px;
+    border-radius: 5px;
+    min-width: 90px;
+    width: 15%;
+    font-size: 14px;
+}
+.anime-item img {
+    width: 70px;
+    height: 100px;
+    margin-bottom: 4px;
+}
+.anime-item h3 {
+    font-size: 10px;
+    margin-bottom: 2px;
+    color: #fff;
+}
+.anime-item p {font-size: 14px; color: #ccc;}
+.anime-item .add-button {margin-top: 4px;}
+.anime-item h3:hover {transition: transform 0.3s ease; transform: scale(1.2);}
+
+
+.reference {margin-right: 15px;}
+.reference ul {list-style: none;}
+.reference li {
+    padding: 10px;
+    background-color: #2a2a2a;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    display: flex;
+}
+.reference li {
+    display: block;
+    padding: 1rem;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    animation: appear 1.2s ease-in;
+}
+.reference li:hover {background-color: #555;}
+.refer {text-decoration: none; color: #bbf4f4;}
+.refer:hover {color: silver;}
+
+
+.add-button {
+    background-color: #666;
+    color: #fff;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 10px;
+    cursor: pointer;
+}
+.add-button:hover {background-color: #888;}
+
+
+.style {text-decoration: none; color: aqua;}
+.end {
+    display: flex;
+    justify-content: space-between;
+    background-color: #434343;
+    padding: 33px;
+}
+
+
+.love-item img, .ln-item img, .anime-item img {transition: transform 0.3s ease;}
+.love-item img:hover, .ln-item img:hover, .anime-item img:hover {transform: scale(1.15);}
+@keyframes appear {from {opacity: 0;} to {opacity: 1;}}
+
+
+.other {
+    background-color: #444;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-left: 30px ;
+    margin-right: 30px;
+}
+.group {
+    background-color: silver;
+    padding: 40px;
+    color: black;
+
+}
+.group ul {margin-left: 20px;}
+.none {text-decoration: none; color: #3b7777;}
+.none:hover{color: #00bcd4;}
+
+
+.hov_name {transition: transform 0.3s ease; transform-origin: left;}
+.hov_name:hover {transform: scale(1.2);}
+
+
+.more { 
+    position: absolute;
+    max-width: 400px;
+    display: none;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 7px;
+    width: 350px;
+    left: 100%;
+    transform: translateX(-50%);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+.hov_name:hover .more {display: block;}
+.genre {
+    border-radius: 5px; 
+    padding: 3px; 
+    background-color: gray; 
+    color: aliceblue; 
+    margin-right: 4px; 
+    font-size: 10px;
+}
+.more img {
+    width: 150px;
+    height: 150px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+
+.light {animation: neon 0.75s infinite;}
+@keyframes neon {
+  0% {color: #b40000;}
+  50% {color: #282828} 
+  100% {color: #c60000;} 
+}
+
+
+.button1, .button2 {
+    border-radius: 20px;
+    padding: 12px;
+    cursor: pointer;
+    border: none;}
+.button1{background-color: #2a2a2a;}
+.button2{background-color: #d7d7d7;}
+
+
+/* ...existing code... */
+
+/* Responsive cho mobile */
+@media (max-width: 900px) {
+  .main-content {
+    flex-direction: column;
+    padding: 8px;
+  }
+  .left-content, .right-content {
+    margin: 0;
+    width: 100%;
+    flex: unset;
+  }
+  .anime-section, .ln-section, .love-section, .reference {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .anime-section .anime-grid, .right-content .anime-grid {
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+  .anime-item {
+    min-width: 120px;
+    width: 45%;
+    margin-bottom: 10px;
+    font-size: 13px;
+  }
+  .anime-item img, .ln-item img, .love-item img {
+    width: 80px;
+    height: 110px;
+  }
+  .ln-item, .love-item {
+    flex-direction: column;
+    align-items: center;
+    width: 98%;
+    font-size: 13px;
+  }
+  .ln-item img, .love-item img {
+    margin: 0 0 6px 0;
+  }
+  .scroll {
+    max-height: 400px;
+  }
+  .start {
+    flex-direction: column;
+    padding: 8px;
+  }
+  .login {
+    margin-left: 0;
+    margin-top: 8px;
+  }
+  .down .downButton {
+    padding: 10px 8px;
+    font-size: 15px;
+  }
+  .teleport {
+    padding: 10px 8px;
+    font-size: 13px;
+  }
+  .end {
+    flex-direction: column;
+    padding: 12px;
+    font-size: 13px;
+    text-align: center;
+    gap: 8px;
+  }
+  .other, .group {
+    margin-left: 4px;
+    margin-right: 4px;
+    padding: 10px;
+    font-size: 16px;
+  }
+  .group {
+    padding: 12px;
+  }
+  .reference li {
+    padding: 0.5rem;
+    font-size: 13px;
+  }
+  .anime-section h2, .ln-section h2, .love-section h2, .reference h2 {
+    font-size: 18px;
+    padding: 5px;
+  }
+  .add-button {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+  .more {
+    position: static;
+    width: 100%;
+    max-width: 100%;
+    transform: none;
+    box-shadow: none;
+    font-size: 12px;
+  }
+}
+
+/* Rất nhỏ (dưới 600px) */
+@media (max-width: 600px) {
+  .anime-item {
+    width: 98%;
+    min-width: unset;
+    font-size: 12px;
+  }
+  .anime-item img, .ln-item img, .love-item img {
+    width: 60px;
+    height: 85px;
+  }
+  .scroll {
+    max-height: 250px;
+  }
+  .start .search {
+    width: 98%;
+    margin-left: 0;
+    margin-top: 8px;
+  }
+  .down-content {
+    min-width: 120px;
+    font-size: 13px;
+  }
+  .anime-section h2, .ln-section h2, .love-section h2, .reference h2 {
+    font-size: 15px;
+    padding: 4px;
+  }
+}

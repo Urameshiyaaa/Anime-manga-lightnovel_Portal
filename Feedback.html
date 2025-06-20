@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Góp ý - Báo lỗi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="https://i.pinimg.com/236x/a3/96/2e/a3962ed14ac3c43be31b5df6e5f905ec.jpg">
+    <link rel="stylesheet" href="Feedback.css">
+</head>
+<body>
+    <div class="start">
+        <div class="logo" style="margin-right: 20px;"><a href=""><img src="https://image.spreadshirtmedia.net/image-server/v1/compositions/T638A2PA1304PT32X35Y36D187145441W17994H3947/views/2,width=550,height=200,appearanceId=2,backgroundColor=000000,noPt=true/anime-logo-sporttasche.jpg" width="120"></a></div>
+
+        <div style="margin: 0 auto;">
+            <div class="down">
+                <button class="downButton" onclick="showNotification()">Thông báo</button>
+
+                <script src="Notification.js"></script>
+
+            </div>
+            <div class="down">
+                <button class="downButton"><a href="https://myanimelist.net/" target="_blank" style="text-decoration: none; color: aliceblue;">Tin tức</a></button>
+            </div>
+            <div class="down">
+                
+                <button class="downButton">Thể loại</button>
+                    <ul class="down-content">
+                        <li> <a href="#" style="text-decoration: none; color: aliceblue;">Romcom</a></li>
+                        <li><a href="#" style="text-decoration: none; color: aliceblue;">School life</a></li>
+                        <li><a href="#" style="text-decoration: none; color: aliceblue;">Slice of Life</a></li>
+                        <li><a href="#" style="text-decoration: none; color: aliceblue;">Shounen</a></li>
+                        <li><a href="#" style="text-decoration: none; color: aliceblue;">Isekai</a></li>
+                        <li><a href="#" style="text-decoration: none; color: aliceblue;">Mystery</a></li>
+                        <li><a href="#" style="text-decoration: none; color: aliceblue;">Action</a></li>
+                        <li><a href="#" style="text-decoration: none; color: aliceblue;">Harem</a></li>
+                    </ul>
+            </div>
+            <div class="down">
+                <button class="downButton">Hướng dẫn</button>
+                    <ul class="down-content">
+                        <li> <a href="#" style="text-decoration: none; color: aliceblue;">Người mới</a></li>
+                        <li><a href="Donate.html" style="text-decoration: none; color: aliceblue;">Ủng hộ</a></li>
+                        <li><a href="Feedback.html" style="text-decoration: none; color: aliceblue;">Góp ý - Báo lỗi</a></li>
+                    </ul>
+            </div>
+            <span><input type="text" class="search" placeholder="Tối thiểu 2 ký tự" style="outline: none;"></span>
+
+            <script src="Search.js"></script>
+
+        </div>
+
+        <div class="login" style="margin-left: auto; text-align: center;">
+            <a href="Login.html">Đăng nhập</a>
+        </div>
+    </div>
+
+
+    
+    <div class="slide" style="margin-bottom: 2.2%;">
+        <img src="" width="100%" height="450px">
+        <div style="margin: 0;display: flex; align-items: center; justify-content: center; gap: 4px;">
+            <button id="prev" class="button1"></button>
+            <button id="next" class="button2"></button>
+        </div>
+    </div>
+    <script src="Wallpaper slide.js"></script>
+    
+
+    <div style="display: inline; margin-left: 4%;"><button style="border: none; background-color: #2a2a2a; padding: 15px 12px"><a href="Web.html" style="text-decoration: none;color: aliceblue; font-size: 14px;">Trang chủ<hr style="color: aliceblue;"></a></button></div>
+
+
+    <div class="frame">
+
+        <div class="post">
+            <h2 class="post-title">Góp ý và báo lỗi</h2>
+            <div class="post-header">
+                <img src="https://via.placeholder.com/40" alt="Admin" class="avatar">
+                <span class="username">Igata Kuraitoku</span>
+                <span class="time">1 năm</span>
+            </div>
+            <div class="post-content">
+                <p style="line-height: 1.5; font-size: 18px;">Hiện Cổng Anime, Manga, Light novel mới đi vào hoạt động, chưa được lâu dài và đang trong quá trình thử nghiệm.
+Do vẫn phải cập nhật thêm nhiều tính năng để đáp ứng được cầu của các bạn nên có thể vẫn có lỗi xảy ra, rất mong các bạn sẽ thông cảm. 
+Nếu có bất kì lỗi nào phát sinh trong lúc sử dụng hãy để lại bình luận để thông báo cho mình biết, mình sẽ sớm khắc phục.<br>
+Cảm ơn những đóng góp của các bạn, hi vọng các bạn sẽ tiếp tục ủng hộ.<br>
+Liên hệ discord <b style="color: aqua;">@HikiNeet</b><br>
+Chúc các bạn có trải nghiệm vui vẻ!<br>
+P/s: À, chỗ này các bạn cũng có thể dùng để thảo luận được nhé.</p>
+            </div>
+        </div>
+
+
+        <div class="cmt-container">
+            <div class="cmt-section">
+                <div class="cmt-box">
+                    <input style="width: 30px;display: none;" type="file" name="avatar" accept="image/*" id="file"/>
+                    <label for="file" style="width: 15px;cursor: pointer;">🔗</label>
+                    <input type="text" class="cmt-input" id="cmtInput" placeholder="P">
+                    <button class="submit-bt" onclick="postComment()">Đăng bình luận</button>
+                </div>
+                <div id="commentList" class="scroll"></div>
+            </div>
+        </div>
+        <script src="Comments.js" defer></script>
+
+    </div>
+
+
+    <div class="end">
+        <span style="color: aliceblue;">© Copyright 2025 Igata Kuraitoku. All rights reserved.<br>Liên hệ: <a href="mailto:p.mduc.ptit@gmail.com" class="style"> p.mduc.ptit@gmail.com</a></span>
+        <span style="color: aliceblue;" ><p style="margin-top: 10px;">Theo dõi chúng tôi: <a href="https://www.facebook.com/FanAnimeMangaLightNovel/?locale=vi_VN" style="color:aqua; text-decoration: none;">Facebook</a></p></span> 
+    </div>
+
+    
+
+</body>
+</html>
