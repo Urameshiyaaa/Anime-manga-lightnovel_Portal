@@ -223,3 +223,109 @@ body {
     background-color: #434343;
     padding: 33px;
 }
+
+
+@media (max-width: 900px) {
+  .start {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 8px 4vw;
+  }
+  .logo {
+    margin: 0 auto 8px auto !important;
+    display: flex;
+    justify-content: center;
+  }
+  .down {
+    float: none;
+    margin: 0 2px;
+  }
+  .start .search {
+    width: 95vw;
+    min-width: 120px;
+    max-width: 500px;
+    margin: 0 auto 8px auto;
+    font-size: 16px;
+    display: block;
+  }
+  .login {
+    margin: 0 auto 8px auto !important;
+    text-align: center;
+  }
+  .slide img {
+    height: 220px !important;
+    object-fit: cover;
+  }
+  .frame {
+    padding: 8px;
+    width: 98vw;
+    max-width: 100vw;
+  }
+  .post-content {
+    font-size: 15px;
+    padding: 12px 8px;
+  }
+  .cmt-section {
+    width: 98vw;
+    min-width: unset;
+    padding: 10px;
+  }
+  .cmt-box {
+    flex-direction: column;
+    gap: 8px;
+    align-items: stretch;
+  }
+  .cmt-input {
+    font-size: 15px;
+    width: 100%;
+  }
+  .submit-bt {
+    width: 100%;
+    font-size: 15px;
+    padding: 10px 0;
+  }
+  .scroll {
+    max-height: 300px;
+  }
+  .end {
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    font-size: 13px;
+    gap: 8px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .logo img {
+    width: 70px !important;
+    height: auto;
+  }
+  .slide img {
+    height: 120px !important;
+  }
+  .frame {
+    padding: 4px;
+    font-size: 13px;
+  }
+  .post-title {
+    font-size: 15px;
+    padding: 8px;
+  }
+  .post-content {
+    font-size: 13px;
+    padding: 8px 4px;
+  }
+  .cmt-section {
+    padding: 6px;
+  }
+  .cmt-input {
+    font-size: 13px;
+  }
+  .submit-bt {
+    font-size: 13px;
+    padding: 8px 0;
+  }
+}
