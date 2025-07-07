@@ -10,10 +10,15 @@
 </head>
 <body>
     <div class="start">
-        <div class="logo" style="margin-right: 20px;">
-            <a href=""><img src="https://image.spreadshirtmedia.net/image-server/v1/compositions/T638A2PA1304PT32X35Y36D187145441W17994H3947/views/2,width=550,height=200,appearanceId=2,backgroundColor=000000,noPt=true/anime-logo-sporttasche.jpg" width="120"></a>
-        </div>
-        <div class="menu-row">
+        <div class="logo" style="margin-right: 20px;"><button onclick="reload()" style="background-color: transparent; border: none;"><img src="https://image.spreadshirtmedia.net/image-server/v1/compositions/T638A2PA1304PT32X35Y36D187145441W17994H3947/views/2,width=550,height=200,appearanceId=2,backgroundColor=000000,noPt=true/anime-logo-sporttasche.jpg" width="120"></button></div>
+        <script>
+            function reload(){
+                window.location.reload();
+            }
+        </script>
+
+
+        <div style="margin: 0 auto;">
             <div class="down">
                 <button class="downButton" onclick="showNotification()">Thông báo</button>
 
@@ -23,20 +28,27 @@
             <div class="down">
                 <button class="downButton"><a href="https://myanimelist.net/" target="_blank" style="text-decoration: none; color: aliceblue;">Tin tức</a></button>
             </div>
+
             <div class="down">
-                
                 <button class="downButton">Thể loại</button>
-                    <ul class="down-content">
-                        <li> <a href="#" style="text-decoration: none; color: aliceblue;">Romcom</a></li>
-                        <li><a href="#" style="text-decoration: none; color: aliceblue;">School life</a></li>
-                        <li><a href="#" style="text-decoration: none; color: aliceblue;">Slice of Life</a></li>
-                        <li><a href="#" style="text-decoration: none; color: aliceblue;">Shounen</a></li>
-                        <li><a href="#" style="text-decoration: none; color: aliceblue;">Isekai</a></li>
-                        <li><a href="#" style="text-decoration: none; color: aliceblue;">Mystery</a></li>
-                        <li><a href="#" style="text-decoration: none; color: aliceblue;">Action</a></li>
-                        <li><a href="#" style="text-decoration: none; color: aliceblue;">Harem</a></li>
-                    </ul>
+                    <ul class="down-content" id="category-list"></ul>
             </div>
+            <script src="GenreList.js"></script>
+            <script>
+                function renderCategoryList(list) {
+                    const ul = document.getElementById('category-list');
+                    ul.innerHTML = '';
+                    list.forEach(item => {
+                        const li = document.createElement('li');
+                        li.setAttribute('data-genre', item.genre);
+                        li.innerHTML = `<a href="#" style="text-decoration: none; color: aliceblue;">${item.name}</a>`;
+                        ul.appendChild(li);
+                    });
+                }
+                renderCategoryList(genreList);
+            </script>
+
+            
             <div class="down">
                 <button class="downButton">Hướng dẫn</button>
                     <ul class="down-content">
@@ -45,13 +57,12 @@
                         <li><a href="Feedback.html" style="text-decoration: none; color: aliceblue;">Góp ý - Báo lỗi</a></li>
                     </ul>
             </div>
+            <span><input type="text" class="search" placeholder="Tối thiểu 2 ký tự"></span>
         </div>
-        <div class="login">
+
+        <div class="login" style="margin-left: auto; text-align: center;">
             <a href="Login.html">Đăng nhập</a>
         </div>
-    </div>
-    <div class="search-row">
-        <input type="text" class="search" placeholder="Tối thiểu 2 ký tự">
     </div>
 
 
@@ -66,7 +77,7 @@
 
 
 
-    <div style="display: inline; margin-left: 4%;"><button style="border: none; background-color: #2a2a2a; padding: 15px 12px"><a href="index.html" style="text-decoration: none;color: aliceblue; font-size: 14px;">Trang chủ<hr style="color: aliceblue;"></a></button></div>
+    <div style="display: inline; margin-left: 4%;"><button style="border: none; background-color: #2a2a2a; padding: 15px 12px"><a href="Web.html" style="text-decoration: none;color: aliceblue; font-size: 14px;">Trang chủ<hr style="color: aliceblue;"></a></button></div>
 
 
     <div class="content">
@@ -84,7 +95,7 @@
         <p>Dưới đây là các bước để bạn dễ dàng làm quen:</p>
         <ul>
             <li><b>Chọn thể loại phù hợp:</b> Nếu bạn thích lãng mạn, tình cảm học đường, đời thường,... hãy thử các thể loại như "Romcom", "Slice of life", "School life",... Nếu thích hành động, các thể loại "Shounen","Adventure","Action",... là lựa chọn tuyệt vời. Tất nhiên, vẫn còn nhiều thể loại khác nhưng đây là 2 thể loại được cộng đồng quan tâm nhiều nhất.</li>
-            <li><b>Xem trước hay đọc trước:</b> Nên xem Anime trước vì dễ tiếp cận hơn nhờ hình ảnh động và âm thanh. Sau đó, bạn có thể đọc manga hoặc light novel của cùng bộ truyuyện để khám phá thêm, biết thêm 1 số chi tiết mà anime ko chuyển thể được hết từ tác phẩm gốc (studio cắt đi để vừa với thời lượng 1 tập phim,...).</li>
+            <li><b>Xem trước hay đọc trước:</b> Nên xem Anime trước vì dễ tiếp cận hơn nhờ hình ảnh động và âm thanh. Sau đó, bạn có thể đọc manga hoặc light novel của cùng bộ truyện để khám phá thêm, biết thêm 1 số chi tiết mà anime ko chuyển thể được hết từ tác phẩm gốc (studio cắt đi để vừa với thời lượng 1 tập phim,...).</li>
             <li><b>Sử dụng nền tảng hợp pháp:</b> Xem anime trên Netflix, Crunchyroll, Muse, Bilibili, hoặc Funimation. Đọc manga/light novel trên BookWalker, Amazon Kindle, hoặc các ứng dụng như Manga Plus,...(Ko khuyến khích vì nhiều hạn chế về ngôn ngữ,...)</li> 
         </ul>
 
@@ -99,7 +110,7 @@
             <li><b>Đối với light novel (ln):</b> Loại này khá kén người đọc, bởi nó chỉ toàn chữ và thỉnh thoảng mới có illustration (minh họa), nên với 1 số bạn, nó sẽ khá là nhàm chán vì khó tưởng tượng và khô khan. Nhưng, như mình đã nói ở trên, hãy THỬ để trải nghiệm. Đối với những bạn RẤT thích thể loại Action
                 thì mình ko thực sự khuyến khích đọc ln vì cảnh chiến đấu trong ln hơi khó hình dung thật.</li>
             <li>Nhưng với thể loại Romcom thì khác. Mình thực sự khuyến khích các bạn đọc romcom ln vì có rất nhiều bộ ln romcom, slice of life, school life cực hay và 'ngọt', nhưng nó ko được chuyển thể thành manga hay anime, đổi lại có những illustration rất đẹp. Chưa kể, thể loại này rất dễ liên tưởng, hình dung vì nó liên quan đến đời thường,
-            có những chi tiết rất gần gũi và quen thuộc với ta như ở ngoài đời thực. Dễ hiểu hơn thì, thể loại này giúp ta tưởng tượng ra 1 thế giới ta luôn muốn mà ngoài đời thực khó có thể có được, và nó logic hơn so với việc tưởng tượng thế giới trong thể loại Action. Khi đọc thể loại này cũng sẽ giúp bạn cảm thấy hạnh phúc và thư giãn vì 
+            có những chi tiết rất gần gũi và quen thuộc với ta như ở ngoài đời thực. Dễ hiểu hơn thì, thể loại này giúp ta tưởng tưởng ra 1 thế giới ta luôn muốn mà ngoài đời thực khó có thể có được, và nó logic hơn so với việc tưởng tượng thế giới trong thể loại Action. Khi đọc thể loại này cũng sẽ giúp bạn cảm thấy hạnh phúc và thư giãn vì 
             nó làm bạn cảm thấy như được thỏa mãn, mãn nguyện. Thực sự mô tả cái này hơi trừu tượng, nhưng đối với 1 số bạn thích thể loại này thì chắc chắn sẽ hiểu được.</li>
             <li>Còn với những bạn chưa đọc thể loại này nói riêng và phân loại ln nói chung thì các bạn yên tâm 1 điều là, nó ko khô khan, ko dùng ngôn từ hoa mĩ hay quá văn chương,
             hoặc triết lí, trừu tượng như Ngữ Văn thời THPT hoặc Triết học, Pháp luật đại cương,... thời Đại học, mà nó thú vị hơn nhiều, bạn sẽ phải vừa đọc vừa tưởng tượng, hơi mất time nhưng hãy cố gắng tưởng tượng vì nó sẽ giúp bạn mở rộng được thể giới quan và có thêm nhiều vốn từ, hơn hết, nó sẽ giúp bạn cải thiện khả năng suy nghĩ, giúp bạn
@@ -130,7 +141,7 @@
 
     <div class="end">
         <span style="color: aliceblue;">© Copyright 2025 Igata Kuraitoku. All rights reserved.<br>Liên hệ: <a href="mailto:p.mduc.ptit@gmail.com" class="style"> p.mduc.ptit@gmail.com</a></span>
-        <span style="color: aliceblue;" ><p style="margin-top: 10px;">Theo dõi chúng tôi: <a href="https://www.facebook.com/FanAnimeMangaLightNovel/?locale=vi_VN" style="color:aqua; text-decoration: none;">Facebook</a></p></span> 
+        <span style="color: aliceblue;" ><p style="margin-top: 10px;">Theo dõi chúng tôi: <a href="https://www.facebook.com/FanAnimeMangaLightNovel/?locale=vi_VN" target="_blank" style="color:aqua; text-decoration: none;">Facebook</a></p></span> 
     </div>
 
     <script src="Genres filter.js"></script>

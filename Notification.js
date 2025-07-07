@@ -1,17 +1,9 @@
 function showNotification() {
-    const notification = document.createElement('div');
-    notification.className = 'notification';
-    notification.textContent = 'Ko có thông tin gì mới';
-    document.body.appendChild(notification);
+    const notif = document.createElement('div')
+    notif.className = 'notif'
+    notif.textContent = 'Ko có thông tin gì mới'
+    document.body.append(notif)
 
-    setTimeout(() => {
-        notification.classList.add('show');
-    }, 100);
-
-    setTimeout(() => {
-        notification.classList.remove('show');
-        setTimeout(() => {
-            notification.remove();
-        }, 300);
-    }, 3000);
+    setTimeout( () => {notif.classList.add('show')}, 100)
+    setTimeout( () => {notif.classList.remove('show')}, 2000)
 }

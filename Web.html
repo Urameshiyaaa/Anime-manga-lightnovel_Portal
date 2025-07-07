@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cổng Anime, Manga, Light novel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="https://i.pinimg.com/236x/a3/96/2e/a3962ed14ac3c43be31b5df6e5f905ec.jpg">
+    <link rel="stylesheet" href="Web.css" >
+</head>
+<body>
+
+    <div class="start">
+        <div class="logo" style="margin-right: 20px;"><button onclick="reload()" style="background-color: transparent; border: none;"><img src="https://image.spreadshirtmedia.net/image-server/v1/compositions/T638A2PA1304PT32X35Y36D187145441W17994H3947/views/2,width=550,height=200,appearanceId=2,backgroundColor=000000,noPt=true/anime-logo-sporttasche.jpg" width="120"></button></div>
+            <script>
+                function reload(){
+                    window.location.reload();
+                }
+            </script>
+
+        <div style="margin: 0 auto;">
+            <div class="down">
+                <button class="downButton" onclick="showNotification()">Thông báo</button>
+
+                <script src="Notification.js"></script>
+
+            </div>
+            <div class="down">
+                <button class="downButton"><a href="https://myanimelist.net/" target="_blank" style="text-decoration: none; color: aliceblue;">Tin tức</a></button>
+            </div>
+
+            <div class="down">
+                <button class="downButton"><a href="FavoriteList.html" style="text-decoration: none; color: aliceblue;">Yêu thích</a></button>
+            </div>
+
+            <div class="down">
+                <button class="downButton">Thể loại</button>
+                    <ul class="down-content" id="category-list"></ul>
+            </div>
+            <script src="GenreList.js"></script>
+            <script>
+                function repeatGenreList(a) {
+                    const b = document.getElementById('category-list')
+                    b.innerHTML = ''
+
+                    a.forEach( genre => {
+                        const li = document.createElement('li')
+                        li.setAttribute('data-genre', genre.genre)
+                        li.innerHTML = `<a href="#" style="text-decoration: none; color: aliceblue;">${genre.name}</a>`
+                        b.appendChild(li)
+                    })
+                }
+                repeatGenreList(genreList)
+            </script>
+
+
+            <div class="down">
+                <button class="downButton">Hướng dẫn</button>
+                   <ul class="down-content">
+                        <li><a href="Newbie.html" style="text-decoration: none; color: aliceblue;">Người mới</a></li>
+                        <li><a href="Donate.html" style="text-decoration: none; color: aliceblue;">Ủng hộ</a></li>
+                        <li><a href="Feedback.html" style="text-decoration: none; color: aliceblue;">Góp ý - Báo lỗi</a></li>
+                    </ul>
+            </div>
+
+            <span><input type="text" class="search" id="searchBar" placeholder="Tối thiểu 2 ký tự" style="outline: none;" ></span>
+            <script src="Search.js"></script>
+
+        </div>
+
+        <div class="login" style="margin-left: auto; text-align: center;">
+             <a href="Login.html">Đăng nhập</a>
+        </div>
+    </div>
+
+
+    <div class="slide">
+        <img src="" width="100%" height="450px">
+        <div style="margin: 0;display: flex; align-items: center; justify-content: center; gap: 4px;">
+            <button id="prev" class="button1"></button>
+            <button id="next" class="button2"></button>
+        </div>
+    </div>
+    <script src="WallpaperSlide.js"></script>
+
+
+    <div style="margin-left: 35px; margin-top: 20px; animation: appear 1.2s ease-in;">
+        <div style="display: inline;"><button class="teleport"><a href="#ln" style="text-decoration: none;color: aliceblue; font-size: 14px;">Light novel <hr style="color: aliceblue;"></a></button></div>
+        <div style="display: inline;"><button class="teleport"><a href="#manga" style="text-decoration: none;color: aliceblue; font-size: 14px;">Manga <hr style="color: aliceblue;"></a></button></div>
+        <div style="display: inline;"><button class="teleport"><a href="#anime" style="text-decoration: none;color: aliceblue; font-size: 14px;">Anime <hr style="color: aliceblue;"></a></button></div>
+        <div style="display: inline;"><button class="teleport"><a href="#other" style="text-decoration: none;color: aliceblue; font-size: 14px;">Khác <hr style="color: aliceblue;"></a></button></div>
+    </div>
+
+
+    <div class="main-content">
+        <div class="left-content" style="animation: appear 1.4s ease-in">
+            
+            <div class="anime-section">
+                <h2 id="anime">ANIME</h2>
+                <div class="scroll">
+                    <div class="anime-grid"></div>
+                </div>
+            </div>
+            <script src="AnimeList.js"></script>
+            <script>
+                function repeatAnimeList(a) {
+                const b = document.querySelector('.anime-section .anime-grid')
+                b.innerHTML = ''
+
+                a.forEach( anime => {
+                    const div = document.createElement('div')
+                    div.className = 'anime-item'
+                    div.setAttribute('data-genres', anime.genres)
+                    div.innerHTML = `
+                    <img src="${anime.img}" alt='${anime.alt}'>
+                    <h3><a href='${anime.link} target='_blank'>${anime.name}</a></h3>
+                    <button class='add-button'>Yêu thích</button>`
+                    b.appendChild(div)
+                    })
+                }
+                repeatAnimeList(animeList)
+            </script>
+
+
+            <div class="ln-section">
+                <h2 id="ln">LIGHT NOVEL</h2>
+                <div class="scroll"></div>
+            </div>
+        </div>
+        <script src="LightnovelList.js"></script>
+        <script>
+            function repeatLnList(a) {
+                const b = document.querySelector('.ln-section .scroll')
+                b.innerHTML = ''
+
+                a.forEach( ln => {
+                    const div = document.createElement('div')
+                    div.className = 'ln-item'
+                    div.setAttribute('data-genres', ln.genres)
+                    div.innerHTML = `
+                    <img src="${ln.img}" alt='${ln.alt}'>
+                    <div>
+                        <h3 class='hov_name'>
+                            ${ln.name}<div class='more'>${ln.more}</div>
+                        </h3>
+                        <button class='add-button'>Yêu thích</button>
+                    </div>`
+                    b.appendChild(div)
+                })
+            }
+            repeatLnList(lnList)
+        </script>
+
+
+        <div class="right-content" style="animation: appear 1.4s ease-in">
+            <div class="reference">
+                <h2>WEB THAM KHẢO</h2>
+                <ul>
+                    <li><a href="https://bit.ly/animevietsubtv" target="_blank" class="refer">Anime Vietsub</a>, <a href="https://animehay.tv/" target="_blank" class="refer"> Anime Hay</a></li>
+                    <li><a href="https://truyenqqgo.com/" target="_blank" class="refer">Truyenqq</a>, <a href="https://cuutruyen.net/" target="_blank" class="refer">Cuutruyen</a>, <a href="https://nettruyenvio.com/" target="_blank" class="refer">Nettruyen</a></li>
+                    <li><a href="https://docln.net/" target="_blank" class="refer">Docln</a>, <a href="https://ln.hako.vn/" target="_blank" class="refer">LnHako</a></li>
+                </ul>
+            </div>
+
+            <div class="manga-section" style="margin-top: 150px;">
+                <h2 id="manga">Manga</h2>
+                <div class="scroll fade">
+                    <div class="manga-grid"></div>
+                </div>
+            </div>
+            <script src="MangaList.js"></script>
+            <script>
+                function repeatMangaList(a) {
+                const b = document.querySelector('.manga-section .manga-grid')
+                b.innerHTML = ''
+
+                a.forEach( manga => {
+                    const div = document.createElement('div')
+                    div.className = 'anime-item'
+                    div.setAttribute('data-genres', manga.genres)
+                    div.innerHTML = `
+                    <img src="${manga.img}" alt='${manga.alt}'>
+                    <h3><a href='${manga.link} target='_blank'>${manga.name}</a></h3>
+                    <button class='add-button'>Yêu thích</button>`
+                    b.appendChild(div)
+                    })
+                }
+                repeatMangaList(mangaList)
+            </script>
+
+            
+            <script src="Genres filter.js"></script>
+
+            
+            <div class="anime-section" style="margin-top: 150px;">
+                <h2 id="other">Nhạc Nhật</h2>
+                <iframe width="330" height="220" 
+                src="https://www.youtube-nocookie.com/embed/In25SyYTpQs?si=KZCzN9xlT2X2RUf1" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen>
+                </iframe>
+            </div>
+            
+        </div>
+    </div>
+
+
+    <div class="other" style="animation: appear 1.6s ease-in">
+        <h2 id="other">Thông tin thêm</h2>
+    </div>
+    <div class="group" style="animation: appear 1.6s ease-in">
+        <h4 class="light">1.Cộng đồng, fanpapge cho fan anime, manga, light novel</h4>
+        <ul id="fanpage-group"></ul>
+        
+        <hr color="gray">
+
+        <h4 class="light">2. Các Anime Festival quanh Hà Nội và cộng đồng Cosplay</h4>
+        <h5 class="light">2.1. Festival ( cre:<a href="https://www.facebook.com/share/g/16J9L3X5PT/" target="_blank" class="none">Cosplay FC(Official)</a> )</h5>
+        <ul id="festival"></ul>
+        <a href="" style="text-decoration: none; color: rgb(65, 119, 119);">...--Sẽ update thêm--...</a>
+        <h5 class="light">2.2. Cộng đồng Cosplay</h5>
+        <ul>
+            <li><a href="https://www.facebook.com/PageMyCosplay" class="none" target="_blank">My Cosplay</a> </li>
+            <li><a href="https://www.facebook.com/share/g/1L8cJC1TED/" class="none" target="_blank">Cosplay FC (Official)</a> </li>
+            <li><a href="https://www.facebook.com/share/g/16FnJGsDCT/" class="none" target="_blank">Cosplay Service</a> </li>
+        </ul>
+    </div>
+    <script src="MoreInfo.js"></script>
+    <script>
+        function repeatCommunity(a) {
+        const b = document.getElementById('fanpage-group')
+        b.innerHTML = ''
+
+        a.forEach( fp => {
+            const li = document.createElement('li')
+            if (fp.link) {
+                li.innerHTML = `<a href="${fp.link}" target="_blank" class="none">${fp.name}</a>`
+            } 
+            else {
+                li.innerHTML = `<a href="#" style="text-decoration: none; color: rgb(65, 119, 119);">${fp.name}</a>`;
+            }
+            b.appendChild(li);
+        });
+        }
+
+        function repeatFestival(a) {
+        const b = document.getElementById('festival')
+        b.innerHTML = ''
+
+        a.forEach( fes => {
+            const li = document.createElement('li');
+            li.innerHTML = `
+                <a href="${fes.link}" class="none" target="_blank">${fes.name}</a><br>
+                ${fes.date}<br>
+                Địa điểm: ${fes.place}<br>
+                ${fes.map}`
+            b.appendChild(li)
+        })
+        }
+        repeatCommunity(fanpage_groupList)
+        repeatFestival(festivalList)
+    </script>
+
+    
+    <div class="end">
+        <span style="color: aliceblue;">© Copyright 2025 Igata Kuraitoku. All rights reserved.<br>Liên hệ: <a href="mailto:p.mduc.ptit@gmail.com" class="style"> p.mduc.ptit@gmail.com</a></span>
+        <span style="color: aliceblue;" ><p style="margin-top: 10px;">Theo dõi chúng tôi: <a href="https://www.facebook.com/FanAnimeMangaLightNovel/?locale=vi_VN" target="_blank" style="color:aqua; text-decoration: none;">Facebook</a></p></span> 
+    </div>
+
+    <Script src="FavoriteButton.js"></Script>
+
+</body>
+</html>

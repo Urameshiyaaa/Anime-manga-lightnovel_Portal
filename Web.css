@@ -69,7 +69,7 @@ body {
 .down:hover .downButton {background-color: gray; color: aliceblue;}
 
 
-.notification {
+.notif {
     position: absolute;
     top: 60px;
     margin-left: 23%;
@@ -82,7 +82,7 @@ body {
     transition: opacity 0.3s ease, transform 0.3s ease;
     z-index: 1000;
 }
-.notification.show {opacity: 1;}
+.notif.show {opacity: 1;}
 
 
 .login a {
@@ -106,13 +106,13 @@ body {
 }
 
 
-.ln-section, .anime-section, .love-section {
+.ln-section, .anime-section, .manga-section {
     margin-bottom: 20px; 
     width: 90%; 
     margin-left: 15px; 
 }
-.ln-section, .anime-section, .love-section {margin-bottom: 30px; border-bottom: 1px solid #555;}
-.ln-section h2, .anime-section h2, .love-section h2, .reference h2 {
+.ln-section, .anime-section, .manga-section {margin-bottom: 30px; border-bottom: 1px solid #555;}
+.ln-section h2, .anime-section h2, .manga-section h2, .reference h2 {
     font-size: 24px;
     margin-bottom: 10px;
     color: white;
@@ -121,7 +121,7 @@ body {
     border-radius: 5px;
     text-align: center;
 }
-.ln-item, .anime-item, .love-item {
+.ln-item, .anime-item {
     display: flex;
     margin-bottom: 15px;
     background-color: #2a2a2a;
@@ -184,6 +184,14 @@ body {
 .anime-item h3:hover {transition: transform 0.3s ease; transform: scale(1.2);}
 
 
+.manga-section .manga-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-bottom: 10px;
+}
+
+
 .reference {margin-right: 15px;}
 .reference ul {list-style: none;}
 .reference li {
@@ -226,8 +234,8 @@ body {
 }
 
 
-.love-item img, .ln-item img, .anime-item img {transition: transform 0.3s ease;}
-.love-item img:hover, .ln-item img:hover, .anime-item img:hover {transform: scale(1.15);}
+.ln-item img, .anime-item img {transition: transform 0.3s ease;}
+.ln-item img:hover, .anime-item img:hover {transform: scale(1.15);}
 @keyframes appear {from {opacity: 0;} to {opacity: 1;}}
 
 
@@ -307,97 +315,3 @@ body {
 
 
 
-/*Css for mobile*/
-@media (max-width: 900px) {
-  .main-content {flex-direction: column; padding: 8px;}
-
-  .left-content, .right-content {
-    margin: 0;
-    width: 100%;
-    flex: unset;
-  }
-
-  .anime-section, .ln-section, .love-section, .reference {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .anime-section .anime-grid, .right-content .anime-grid {
-    flex-wrap: wrap;
-    gap: 8px;
-    justify-content: center;
-  }
-  .anime-item {
-    min-width: 120px;
-    width: 45%;
-    margin-bottom: 10px;
-    font-size: 13px;
-  }
-  .anime-item img, .ln-item img, .love-item img {width: 80px; height: 110px;}
-
-  .ln-item, .love-item {
-    flex-direction: column;
-    align-items: center;
-    width: 98%;
-    font-size: 13px;
-  }
-  .ln-item img, .love-item img {margin: 0 0 6px 0;}
-
-  .scroll {max-height: 400px;}
-
-  .start {flex-direction: column; padding: 8px;}
-  .login {margin-left: 0; margin-top: 8px;}
-  .down .downButton {padding: 10px 8px; font-size: 15px;}
-  .teleport {padding: 10px 8px; font-size: 13px;}
-
-
-  .end {
-    flex-direction: column;
-    padding: 12px;
-    font-size: 13px;
-    text-align: center;
-    gap: 8px;
-  }
-
-  .other, .group {
-    margin-left: 4px;
-    margin-right: 4px;
-    padding: 10px;
-    font-size: 16px;
-  }
-  .group {padding: 12px;}
-  
-  .reference li {padding: 0.5rem; font-size: 13px;}
-
-  .anime-section h2, .ln-section h2, .love-section h2, .reference h2 {font-size: 18px; padding: 5px;}
-
-  .add-button {font-size: 11px; padding: 4px 8px;}
-
-  .more {
-    position: static;
-    width: 100%;
-    max-width: 100%;
-    transform: none;
-    box-shadow: none;
-    font-size: 12px;
-  }
-}
-@media (max-width: 600px) {
-  .anime-item {
-    width: 98%;
-    min-width: unset;
-    font-size: 12px;
-  }
-  .anime-item img, .ln-item img, .love-item img {width: 60px; height: 85px;}
-
-  .scroll {max-height: 250px;}
-
-  .start .search {
-    width: 98%;
-    margin-left: 0;
-    margin-top: 8px;
-}
-  .down-content {min-width: 120px; font-size: 13px;}
-  .anime-section h2, .ln-section h2, .love-section h2, .reference h2 {font-size: 15px; padding: 4px;}
-}
