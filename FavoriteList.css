@@ -69,7 +69,7 @@ body {
 .down:hover .downButton {background-color: gray; color: aliceblue;}
 
 
-.notification {
+.notif {
     position: absolute;
     top: 60px;
     margin-left: 23%;
@@ -82,7 +82,7 @@ body {
     transition: opacity 0.3s ease, transform 0.3s ease;
     z-index: 1000;
 }
-.notification.show {opacity: 1;}
+.notif.show {opacity: 1;}
 
 
 .login a {
